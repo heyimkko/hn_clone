@@ -12,6 +12,9 @@
 
 <div class="container">
   <% @posts.each do |post| %>
-    <li><%= post.title %></li>
+    <li>
+      <a href="/posts/<%= post.id %>"><%= post.title %></a>
+      By: <a href="/users/<%= post.author_id %>"><%= post.author_id %></a>
+    </li>
   <% end %>
 </div>

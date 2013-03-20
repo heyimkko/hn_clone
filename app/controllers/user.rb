@@ -12,6 +12,7 @@ end
 post '/users/new' do
   User.create(params)
 
+  redirect '/'
 end
 
 post '/users/signin' do

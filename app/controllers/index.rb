@@ -18,7 +18,7 @@ end
 
 post '/new' do
   puts params
-  params[:author_id] = 55
+  params[:user_id] = 55
   puts new_post = Post.new(params)
   if new_post.save
     redirect '/ '
