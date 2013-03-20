@@ -1,37 +1,35 @@
-  
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+  th {
+    text-align: left;
+  }
+</style>
 
 <div class="container">
-  <h1>Welcome to your blog</h1>
-    <% unless @posts == [] %>
-    <p>These are the posts that you have already written</p>
-      <table class="posts">
-        <th>Blog Post</th>
-        <th>Blog Author</th>
-        <% @posts.each do |post| %>
-          <tr>
-            <td>
-            <a href= <%= post.id %>> <%= post.title %> </a>, <%= post.author %>
-                <form action="/posts/<%= post.id %>" method="post">
-                  <input type="hidden" name="_method" value="delete" />
-                  <input type='submit' value='Delete'> 
-                </form>
-                <form action="/edit/<%= post.id %>" method="get">  
-                  <input type='submit' value='Update'>
-                </form>
-            <td>
-          </tr>
-        <% end %>  
-      </table>
-    <% end %>
-      <div class = "new_post">
-      <h2>Create a post</h2>
-      <form action= "/new"   method="post"™>
-        <div>Title</div><input type='text' name='title'><br>
-        <div>Author</div><input type='text' name='author'><br>
-        <div>Text</div><textarea name='body'></textarea><br>
-        <div>Email</div><input type='text' name='email'><br>
-        <div>Tags(separeted by commas)</div><input type='text' name='tags'><br><br>
-        <input type='submit' value='Submit'></br>
-      </form>
-    </div>
+  <h1>Welcome to Sinatra!</h1>
+  <p>Hello, world!</p>
+
+  <table>
+    <tr>
+      <th>File Description</th>
+      <th>File Location</th>
+    </tr>
+    <tr>
+      <td>This view file</td>
+      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
+    </tr>
+    <tr>
+      <td>The layout file</td>
+      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
+    </tr>
+    <tr>
+      <td>The current controller</td>
+      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
+    </tr>
+  </table>
 </div>
