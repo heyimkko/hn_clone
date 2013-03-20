@@ -1,0 +1,29 @@
+
+.container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+
+  }
+
+
+.container table{
+  border-bottom: 3px solid #444;
+}
+
+  th {
+    text-align: left;
+  }
+
+
+.posts{
+  line-height: 150%;
+}
+
+.new_post{
+  line-height: 150%; 
+}
+
+form {
+  display: inline-block;
+}

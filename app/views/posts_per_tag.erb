@@ -1,0 +1,22 @@
+<div class="container">
+  <h1> <%= @tag.name %> </h1>
+  <p>These are the posts that you have writter with this particular tag</p>
+  <table>
+    <th>Blog Post</th>
+    <th>Blog Author</th>
+    <% @posts.each do |post| %>
+      <tr>
+        <td>
+        <a href= <%= post.id %>> <%= post.title %> </a>, <%= post.author %>
+            <form action="/posts/<%= post.id %>" method="post">
+              <input type="hidden" name="_method" value="delete" />
+              <input type='submit' value='Delete'> 
+            </form>
+            <form action="/edit/<%= post.id %>" method="get">  
+              <input type='submit' value='Update'>
+            </form>
+        <td>
+      </tr>
+    <% end %>  
+  </table>
+</div>
