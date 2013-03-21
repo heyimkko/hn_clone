@@ -1,20 +1,21 @@
-<style type="text/css">
-  .container {
-    margin: 20px auto;
-    width: 600px;
-    padding: 0px 20px 20px 20px;
-    border: 1px dotted black;
-  }
-  th {
-    text-align: left;
-  }
-</style>
-
-<div class="container">
+<ul>
   <% @posts.each do |post| %>
-    <li>
-      <a href="/posts/<%= post.id %>"><%= post.title %></a>
-      By: <a href="/users/<%= post.user_id %>"><%= post.user_id %></a>
+      <li>
+      <span id="post-title">
+        <a href="/posts/<%= post.id %>"><%= post.title %></a>
+      </span> 
+      <span id="post-url">
+        (<%= post.url %>)
+      </span>
+
+      <div class="sub-info">
+        <span class="points">
+          <%= post.post_votes %> points
+        </span>
+        <span class="mini-user-id">
+         by: <a href="/users/<%= post.user_id %>"><%= post.user_id %></a> | 
+         <a href="/posts/<%= post.id %>">See Comments</a>
+        </span></div>
     </li>
   <% end %>
-</div>
+</ul>

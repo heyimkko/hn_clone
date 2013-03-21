@@ -1,6 +1,5 @@
 get '/' do
-    session[:user_id] = 1
-  # Look in app/views/index.erb
+  session[:user_id] = 1
   @posts = Post.all
   erb :index
 end
