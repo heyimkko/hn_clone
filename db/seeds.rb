@@ -33,10 +33,10 @@ class Seeder
 end
 
 
-# 50.times do
-# 	Seeder.make
-# end
+50.times do
+	Seeder.make
+end
 
-# Seeder.post
+Seeder.post
 
-# Seeder.post_comment
+Seeder.post_comment
