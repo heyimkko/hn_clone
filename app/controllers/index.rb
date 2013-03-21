@@ -1,4 +1,5 @@
 get '/' do
+    session[:user_id] = 1
   # Look in app/views/index.erb
   @posts = Post.all
   erb :index
@@ -19,6 +20,7 @@ end
 post '/new' do
   puts params
   params[:user_id] = 55
+
   puts new_post = Post.new(params)
   if new_post.save
     redirect '/ '
@@ -26,6 +28,7 @@ post '/new' do
 end
 
 get '/posts/:id' do
+  puts session[:user_id]
   @post = Post.find(params[:id])
 
   erb :'/posts/single_post'

@@ -1,0 +1,4 @@
+<% @comments.each do |comment| %>
+  <a href="<%= comment.post.id %>"><%= comment.post.title %></a>
+  <%= comment.content %>
+<% end %>

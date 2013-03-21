@@ -17,4 +17,18 @@ end
 
 post '/users/signin' do
   # User.find AUTH STUFF
+
+  redirect '/'
 end
+
+post '/comment/new' do
+  
+  Comment.create(params)
+  redirect back
+end
+
+get '/users/:id/comments' do
+  @comments = Comments.where(:user_id => params[:id])
+
+  erb :'/users/comments'
+end  

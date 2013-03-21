@@ -14,7 +14,7 @@
   <% @posts.each do |post| %>
     <li>
       <a href="/posts/<%= post.id %>"><%= post.title %></a>
-      By: <a href="/users/<%= post.author_id %>"><%= post.author_id %></a>
+      By: <a href="/users/<%= post.user_id %>"><%= post.user_id %></a>
     </li>
   <% end %>
 </div>
