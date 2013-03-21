@@ -1,7 +1,7 @@
 before do
   puts request.path_info #!= '/users/signin'
-  if session[:user].nil? && request.path_info != '/users/signin' 
-    redirect "/users/signin" 
+  if session[:user].nil? && (request.path_info != '/users/signin' || request.path_info != '/users/new') 
+    redirect request.path_info
   elsif session[:user] && (request.path_info == '/users/new' || request.path_info == '/users/signin')
     redirect '/'
   end
