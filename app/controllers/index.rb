@@ -1,7 +1,3 @@
-# before do
-#   redirect "/users/signin" unless session[:user]
-# end
-
 get '/' do
   session[:user_id] = 1
   @posts = Post.all
