@@ -20,6 +20,7 @@ ul {
   margin-top: 0px;
   margin-left: 18px;
   padding-left: 18px;
+  padding-right: -3px;
 }
 
 nav {
@@ -50,7 +51,7 @@ nav li {
   background-color: #FFF6E5;
 }
 
-.container li{
+.container li {
   list-style: decimal;
   color: #555;
   font-family: Helvetica;
