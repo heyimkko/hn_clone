@@ -1,6 +1,7 @@
 <ul>
   <% @posts.each do |post| %>
       <li>
+      <a href="#"><img src="https://news.ycombinator.com/grayarrow.gif"></a>
       <span id="post-title">
         <a href="/posts/<%= post.id %>"><%= post.title %></a>
       </span> 
