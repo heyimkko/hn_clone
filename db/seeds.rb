@@ -9,10 +9,10 @@ class Seeder
 		User.all.each do |user|
 			3.times do |i|
 				if i % 3 == 0
-					user.posts.create(title: Faker::Lorem.words, 
+					user.posts.create(title: Faker::Lorem.words.join(" "), 
 													 url: Faker::Internet.url)
 				else
-					user.posts.create title: Faker::Lorem.words, 
+					user.posts.create title: Faker::Lorem.words.join(" "), 
 													 url: Faker::Internet.url,
 													 content: Faker::Lorem.paragraphs
 				end
